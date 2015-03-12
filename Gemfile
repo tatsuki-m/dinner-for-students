@@ -46,3 +46,9 @@ end
 
 # pry
 gem 'pry-rails'
+gem 'mechanize'
+gem 'settingslogic'
+gem 'rails_config'
+gem 'kaminari'
+gem 'pg'
+gem 'rails_12factor'

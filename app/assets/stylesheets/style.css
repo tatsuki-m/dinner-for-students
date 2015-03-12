@@ -1,0 +1,184 @@
+/*メイン画面*/
+.contents{
+width: 1000px;
+margin:0 auto;
+/*background-color: #ffffff;*/}
+
+.section_left{
+  width:700px;
+  background-color: #ffffff;
+  padding:10px;
+  margin: 0 5px 0 0;
+  float: left;
+  color: #000000;
+}
+strong{
+  color: #000000;
+}
+
+.station_list{
+  width: 600px;
+  margin: 3px auto;
+}
+
+.station_list ul li{
+list-style: none;
+}
+
+
+.list_image{
+  width: 120px;
+  height: 120px;
+  float: left;
+  margin: 10px;
+}
+
+.section_right{
+  width:250px;
+  background-color: #ffffff;
+  padding:10px;
+  float: left;
+  color: #000000;
+}
+
+.box{
+  margin:0 auto;
+  width: 250px;
+  height: 250px;
+}
+
+.title_box{
+  text-align: center;
+  font-size: 5px;
+}
+
+.box .content_box img{
+  width: 220px;
+  height: 200px;
+}
+
+.ranking_all ul{
+  padding: 0px;
+}
+
+
+
+
+.clearfix:after{
+  content:"";
+  clear: both;
+  display:block;
+}
+
+
+/*show画面の編集*/
+.section{
+  width: 930px;
+}
+
+.container div{
+  margin: 0;
+}
+
+.image{
+  width: 900px;
+  margin: 0 auto;
+}
+
+.image .image1_station{
+  width: 300px;
+  height: 300px;
+  margin: 0;
+}
+
+.image .image2_station{
+  width: 500px;
+  height: 300px;
+  margin: 0;
+}
+
+.box_ranking{
+  width: 700px;
+  height: 200px;
+  line-height: 3;
+  list-style: none;
+  margin: 10px auto;
+}
+
+
+.left_box_ranking{
+  width: 30px;
+  height: 200px;
+  font-size: 10px;
+  text-align: center;
+  font-family: fantasy;
+  font-size: 30px;
+  float: left;
+  margin: 0 important!;
+}
+
+.center_box_ranking{
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin: 0;
+}
+
+
+.center_box_ranking img{
+  width: 150px;
+  height:150px;
+  margin: auto important!;
+}
+
+.right_box_ranking{
+  width: 470px;
+  height: 200px;
+  font-family: fantasy;
+  float: left;
+  margin: 0 10px;
+}
+
+.right_box_ranking span{
+  font-size: 30px;
+}
+
+
+.score_restaurant{
+  font-size:  20px;
+}
+
+
+検索ページの検索
+.section .container{
+  width: 900px;
+  margin: 0 auto;
+}
+
+.right_box_ranking_search{
+  width: 500px;
+  height: 200px;
+  font-family: fantasy;
+  float: left;
+  margin: 0 10px;
+}
+
+ .paging{
+  text-align: center;
+ }
+
+ .search_condition{
+  font-size: 10px;
+  margin :5px 0 important!;
+ }
+
+ .rstname_search{
+  font-size: 25px;
+ }
+
+
+
+
+
+
+

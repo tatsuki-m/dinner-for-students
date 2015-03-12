@@ -1,33 +1,34 @@
 class TopController < ReviewController
-
   def index
-    @products = [] # productテーブルから最新順に作品データを20件取り出す
+    @stations = Station.order('updated_at DESC')
+    @restaurants = Restaurant.group(:score).order('score DESC').limit(5)
   end
 
   def search
-    # productsテーブルからキーワードで検索した作品データを20件取り出し、@products変数に入れる処理を書いて下さい
-    @products = []
+    @stations = Station.all.map{|station| [station.station, station.station]}
+
+    if params[:restaurant].present?
+        if params[:restaurant][:station].present? && params[:restaurant][:price_dinner].present?
+          @restaurants = Restaurant.where(station: params[:restaurant][:station], price_dinner: params[:restaurant][:price_dinner]).page(params[:page]).per(10).order("created_at DESC")
+
+        elsif params[:restaurant][:station].present?
+          @restaurants = Restaurant.where(station: params[:restaurant][:station]).page(params[:page]).per(10).order("created_at DESC")
+        else
+          @restaurants = Restaurant.where(price_dinner: params[:restaurant][:price_dinner]).page(params[:page]).per(10).order("created_at DESC")
+        end
+    else
+      @restaurants = Restaurant.where(:station => "日吉駅").page(params[:page]).per(10).order("created_at DESC")
+    end
   end
 
-  def entry
-    @product = Product.find(entry_params[:id])
-  end
 
-  def post
-    # top_controller.rbのpostアクションでデータを受け取り、データベースに保存する処理を書いて下さい
-    # トップページにリダイレクトする処理を書いて下さい
-  end
 
-  private
-  def search_params
-    params.permit(:keyword)
-  end
+  # def index
+  #   prices = %W( ～￥999 ￥1,000～￥1,999 ￥2,000～￥2,999 ￥3,000～￥3,999)
+  #   restaurants =[]
+  #   prices.each do |price|
+  #     restaurants << Restaurant.where(:price_dinner => price).group(:score).order('score DESC').limit(10)
+  #   end
+  # end
 
-  def entry_params
-    params.permit(:id)
-  end
-
-  def create_params
-    params.permit(:nickname, :product_id, :rate, :review)
-  end
 end

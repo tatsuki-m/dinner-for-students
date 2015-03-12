@@ -1,0 +1,63 @@
+defaults: &defaults
+  daikanyama:
+    name: 代官山駅
+    url:  http://tabelog.com/tokyo/A1303/A130303/R5661/rstLst/?vs=1&sa=%E4%BB%A3%E5%AE%98%E5%B1%B1%E9%A7%85&sk=&lid=hd_search1&sw=
+  namakeguro:
+    name: 中目黒駅
+    url: http://tabelog.com/tokyo/A1317/A131701/R7118/rstLst/?vs=1&sa=%E4%B8%AD%E7%9B%AE%E9%BB%92%E9%A7%85&sk=&lid=hd_search1&sw=
+  yutenji:
+    name: 祐天寺駅
+    url: http://tabelog.com/tokyo/A1317/A131701/R10340/rstLst/?vs=1&sa=%E7%A5%90%E5%A4%A9%E5%AF%BA%E9%A7%85&sk=&lid=hd_search1&sw=
+  gakugeidai:
+    name: 学芸大学駅
+    url: http://tabelog.com/tokyo/A1317/A131702/R2276/rstLst/?vs=1&sa=%E5%AD%A6%E8%8A%B8%E5%A4%A7%E5%AD%A6%E9%A7%85&sk=&lid=hd_search1&sw=
+  toritu_daigaku:
+    name: 都立大学駅
+    url: http://tabelog.com/tokyo/A1317/A131702/R6885/rstLst/?vs=1&sa=%E9%83%BD%E7%AB%8B%E5%A4%A7%E5%AD%A6%E9%A7%85&sk=&lid=hd_search1&sw=
+  jiyugaoka:
+    name: 自由が丘駅
+    url: http://tabelog.com/tokyo/A1317/A131703/R4885/rstLst/?vs=1&sa=%E8%87%AA%E7%94%B1%E3%81%8C%E4%B8%98%E9%A7%85%EF%BC%88%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%89&sk=&lid=hd_search1&sw=
+  denentyohu:
+    name: 田園調布駅
+    url: http://tabelog.com/tokyo/A1317/A131704/R6502/rstLst/?vs=1&sa=%E7%94%B0%E5%9C%92%E8%AA%BF%E5%B8%83%E9%A7%85&sk=&lid=hd_search1&sw=
+  tamagawa:
+    name: 多摩川駅
+    url: http://tabelog.com/tokyo/A1317/A131704/R6066/rstLst/?vs=1&sa=%E5%A4%9A%E6%91%A9%E5%B7%9D%E9%A7%85%EF%BC%88%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%89&sk=&lid=hd_search1&sw=
+  shinmaruko:
+    name: 新丸子駅
+    url: http://tabelog.com/kanagawa/A1405/A140504/R5310/rstLst/?vs=1&sa=%E6%96%B0%E4%B8%B8%E5%AD%90%E9%A7%85&sk=&lid=hd_search1&sw=
+  musashikosugi:
+    name: 武蔵小杉駅
+    url: http://tabelog.com/kanagawa/A1405/A140504/R9897/rstLst/?vs=1&sa=%E6%AD%A6%E8%94%B5%E5%B0%8F%E6%9D%89%E9%A7%85&sk=&lid=hd_search1&sw=
+
+  okurayama:
+    name: 大倉山駅
+
+
+  tsunashima:
+    name: 綱島駅
+
+  motosumiyoshi:
+    name: 元住吉駅
+    
+  kikuna:
+    name: 菊名駅
+
+  myorenji:
+    name: 妙蓮寺駅
+
+  hakuraku:
+    name: 白楽駅
+
+  higashihakuraku:
+    name: 東白楽駅
+
+  sorimachi:
+    name: 反町駅
+
+  hiyoshi:
+    name: 日吉駅
+
+
+development:
+  <<: *defaults

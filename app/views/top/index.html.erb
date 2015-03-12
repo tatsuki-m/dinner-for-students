@@ -1,31 +1,52 @@
-  <div id="main_cnt_wrapper">
-    <div id="yjContentsBody">
-      <div class="yjContainer">
-        <span class="yjGuid"><a id="yjContentsStart" name="yjContentsStart"></a><img alt="ここから本文です" height="1" src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" width="1"></span>
-        <div id="yjMain">
-          <article class="section">
-            <div class="container">
-              <header class="header header--section">
-                <h2 class="text-middle">
-                  <i class="icon-movie color-gray-light"></i>新着作品
-                </h2>
-              </header>
-              <ul class="thumbnails thumbnail--movies row grid4 js-lazy-load-images js-my-check-stats" id="list-module">
-                <% @products.each do |product| %>
-                  <li class="col">
-                    <a href="/products/<%= product.id %>"><div class="thumbnail__figure" style="background-image:url(<%= product.image_url %>)"></div></a>
-                    <div class="thumbnail__caption">
-                      <h3 class="text-xsmall text-overflow" title="<%= product.title %>">
-                        <span><i class="icon-rate-60 text-xxsmall opacity-60" title=""></i></span>タイトル<small 2014=""></small>
-                      </h3>
-                      <p class="text-small">
-                        <span class="rating-star"><i class="star-actived rate-[ここに平均評価数]0"></i></span>
-                      </p>
-                    </div>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </article>
+<div class="contents  clearfix">
+    <article class="section_left">
+      <div class="left_content">
+        <header class="header header--section">
+          <h2 class="text-middle">
+            <i class="icon-movie color-gray-light"> <strong>東横線一覧</strong></i>
+          </h2>
+        </header>
+          <div class="station_list">
+          <ul>
+            <li>
+            <img src="http://blogs.c.yimg.jp/res/blog-d6-7a/kabuki7600/folder/170478/09/9213909/img_0?1366929963" alt="東横線" class="list_image">
+          </li>
+            <% @stations.each do |stati| %>
+            <li>
+              <a href="/station/<%= stati.id%>"><img src="<%= stati.station_image1 %>" alt="<%= stati.station%>" class="list_image"></a>
+            </li>
+            <% end %>
+          </ul>
         </div>
-        <div id="yjSub">
+      </div>
+    </article>
+
+  <article class="section_right">
+      <div class="right_content">
+        <header class="header header--section">
+          <h2 class="text-middle">
+            <i class="icon-movie color-gray-light"> <strong>総合ランキング</strong></i>
+          </h2>
+        </header>
+        <div class="ranking_all">
+          <ul>
+            <% @restaurants.each.with_index(1) do |restaurant, i| %>
+              <div class="box">
+                <li>
+                  <a href= "<%= restaurant.rst_url %>">
+                    <span class="title_box">
+                     No<%= i %> : <%= restaurant.rstname %>
+                     </span>
+                    <div class="content_box">
+                      <img src="<%= restaurant.image_url %>" alt="画像サンプル">
+                    </div>
+                  </a>
+                </li>
+              </div>
+            <% end %>
+          </ul>
+
+      </div>
+  </article>
+
+</div>

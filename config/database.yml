@@ -11,7 +11,7 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: tech_review_site_development
+  database: restaurant_in_toyoko_development
   pool: 5
   username: root
   password:
@@ -23,7 +23,7 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: tech_review_site_test
+  database: restaurant_in_toyoko_test
   pool: 5
   username: root
   password:
@@ -32,7 +32,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: tech_review_site_production
+  database: restaurant_in_toyoko_production
   pool: 5
   username: root
   password:
