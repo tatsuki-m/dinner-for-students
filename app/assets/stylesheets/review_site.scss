@@ -26,14 +26,16 @@ body {
   width: 100px!important;;
   display: inline-block;
   border: none!important;
+  font-family: cursive;
 }
 .logo a:hover {
   background: none!important;
 }
 .logo {
-font-family: 'roboto', sans-serif;
-font-size: 25px!important;
+font-family: serif;
+font-size: 20px!important;
 }
+
 
 
 .form_box {
@@ -274,3 +276,4 @@ input, textarea {
 0% {top: -40px;opacity: 0;}
 100% {top: 0px; opacity: 1;}
 }
+

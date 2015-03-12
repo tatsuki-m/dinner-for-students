@@ -7,14 +7,17 @@
             <div class="container">
               <header class="header header--section">
                 <h2 class="text-middle">
-                  <i class="icon-movie color-gray-light"></i>投稿する作品を検索
+                  <i class="icon-movie color-gray-light"></i>
+                  お店の検索
                 </h2>
               </header>
-              <%= form_for('/search', method: :get) do |f| %>
-                <input class="search__query" name="keyword" placeholder="作品名で検索" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search"></i></button></input>
-              <% end %>
-              <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
-              </form>
+              <%= form_tag('/search', method: :get) do |f| %>
+                駅で検索&nbsp;&nbsp;<%= select :restaurant, :station, @stations,  :prompt => "選択してください" %>
+                &nbsp;&nbsp;
+                値段で検索&nbsp;&nbsp;<%= select :restaurant, :price_dinner, [[" ～￥999"," ～￥999"], ["￥1,000～￥1,999", "￥1,000～￥1,999"], ["￥2,000～￥2,999", "￥2,000～￥2,999"], ["￥3,000～￥3,999", "￥3,000～￥3,999"], ["￥4,000～￥4,999", "￥4,000～￥4,999"]],  :prompt => "選択してください" %><button class="btn-search" title="検索" type="submit"><i class="icon-search"></i></button></input>
+                <% end %>
+             <!--  <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
+              </form> -->
             </div>
           </article>
           <article class="section">
@@ -25,28 +28,35 @@
                 </h2>
               </header>
               <ul class="listview js-lazy-load-images">
-                <li>
-                  <a class="listview__element--right-icon" href="/entry/0" title="神さまの言うとおり">
-                    <div class="position-right p1em">
-                      <i class="icon-chevron-right color-sub"></i>
-                    </div>
-                    <div class="row no-space-bottom">
-                      <div class="col2">
-                        <div class="thumbnail thumbnail--movies">
-                          <div class="thumbnail__figure" style="background-image: url(http://image.eiga.k-img.com/images/movie/79576/poster2/200.jpg?1410346831);" title="神さまの言うとおり"></div>
-                        </div>
-                      </div>
-                      <div class="col6 push6">
-                        <h3 class="text-middle text-break">
-                          <span class="color-sub">神さまの言うとおり</span>
-                        </h3>
-                        <p class="text-xsmall text-overflow">
-                        </p>
-                      </div>
-                    </div>
-                  </a>
+                <% @restaurants.each do |restaurant| %>
+                <li style="border-bottom: dotted 1px" class="box_ranking">
+                <div class="center_box_ranking">
+                  <img src="<%= restaurant.image_url %>" alt="<%= restaurant.rstname %>" >
+                </div>
+                <div class="right_box_ranking_search">
+                  <p>
+                    店名: <span class="rstname_search"><%= restaurant.rstname %></span>
+                  </p>
+                  <!-- <p class="text-small">
+                      <span class="rating-star"><i class="star-actived rate-<%= restaurant.score.round %>"></i></span> -->
+                  <p class="score_restaurant">
+                    お店の評価 : <%= restaurant.score %>
+                    <span>最寄り駅 :  <%= restaurant.station.station %></span>
+                  </p>
+                  </p>
+                  <p class="budget">
+                    夜:<%= restaurant.price_dinner %> 昼:<%= restaurant.price_lunch %>
+                  </p>
+                  <p>
+                  <a href="<%= restaurant.rst_url %>" target="_blank">ホームページ</a>
+
+                </div>
                 </li>
+                <% end %>
               </ul>
+              <div class="paging">
+                <%= paginate(@restaurants) %>
+              </div>
             </div>
           </article>
         </div>

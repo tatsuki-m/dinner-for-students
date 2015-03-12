@@ -7,21 +7,22 @@
             <div class="container">
               <header class="header header--section">
                 <h2 class="text-middle">
-                  <i class="icon-movie color-gray-light"></i>神さまの言うとおり
+                  <i class="icon-movie color-gray-light"></i><%= @station.station %>
                 </h2>
               </header>
-              <p style="text-align: center">
-                <img src="http://image.eiga.k-img.com/images/movie/79576/poster2/200.jpg?1410346831" alt="神さまの言うとおり">
+              <p style="text-align: center" class="image">
+                <img src="<%= @station.station_image1%>" alt="画像1" class="image1_station">
+                <img src="<%= @station.station_image2%>" alt="画像2" class="image2_station">
               </p>
               <div style="text-align: right">
-                <a href="">この作品を投稿する</a>
+                <a href="<%= @station.station_url %>" target="_blank"><%= @station.station%>詳細</a>
               </div>
               <header class="header header--section">
                 <h2 class="text-middle">
-                  <i class="icon-movie color-gray-light"></i>みんなのレビュー
+                  <i class="icon-movie color-gray-light"></i><%= @station.station %>のお店ランキングTOP10
                 </h2>
               </header>
-              <ul style="padding: 0">
+              <!-- <ul style="padding: 0">
                 <li style="border-bottom: dotted 1px">
                   <div class="thumbnail__caption">
                     <h3 class="text-xsmall text-overflow" title="テスト太郎">
@@ -35,6 +36,33 @@
                     </p>
                   </div>
                 </li>
+              </ul> -->
+              <ul style="padidng: 0">
+                <% @ranking.each.with_index(1) do |restaurant, i| %>
+                <li style="border-bottom: dotted 1px" class="box_ranking">
+                <div class="left_box_ranking">
+                  <%= i %>
+                </div>
+                <div class="center_box_ranking">
+                  <img src="<%= restaurant.image_url %>" alt="<%= restaurant.rstname %>" >
+                </div>
+                <div class="right_box_ranking">
+                  <p>
+                    店名: <span><%= restaurant.rstname %></span>
+                  </p>
+                  <p class="score_restaurant">
+                    お店の評価 : <%= restaurant.score %>
+                  </p>
+                  </p>
+                  <p class="budget">
+                    夜:<%= restaurant.price_dinner %> 昼:<%= restaurant.price_lunch %>
+                  </p>
+                  <p>
+                  <a href="<%= restaurant.rst_url %>" target="_blank">ホームページ</a>
+
+                </div>
+                </li>
+                <% end %>
               </ul>
             </div>
           </article>
