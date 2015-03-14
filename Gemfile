@@ -50,5 +50,12 @@ gem 'mechanize'
 gem 'settingslogic'
 gem 'rails_config'
 gem 'kaminari'
-gem 'pg'
+
 gem 'rails_12factor'
+
+group :development do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'mysql2'
+end

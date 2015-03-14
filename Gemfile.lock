@@ -95,8 +95,13 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.0.4)
       sprockets-rails (~> 2.0.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
     rails_config (0.4.2)
       activesupport (>= 3.0)
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.3)
     railties (4.0.4)
       actionpack (= 4.0.4)
       activesupport (= 4.0.4)
@@ -126,6 +131,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    sqlite3 (1.3.10)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -158,10 +164,12 @@ DEPENDENCIES
   mysql2
   pry-rails
   rails (= 4.0.4)
+  rails_12factor
   rails_config
   sass-rails (~> 4.0.2)
   sdoc
   settingslogic
+  sqlite3
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)
