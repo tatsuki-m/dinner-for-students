@@ -114,7 +114,7 @@ list-style: none;
   font-family: fantasy;
   font-size: 30px;
   float: left;
-  margin: 0 important!;
+  margin: 0 !important;
 }
 
 .center_box_ranking{
@@ -128,7 +128,7 @@ list-style: none;
 .center_box_ranking img{
   width: 150px;
   height:150px;
-  margin: auto important!;
+  margin: auto !important!;
 }
 
 .right_box_ranking{
@@ -149,7 +149,7 @@ list-style: none;
 }
 
 
-検索ページの検索
+/*検索ページの検索*/
 .section .container{
   width: 900px;
   margin: 0 auto;
@@ -169,7 +169,7 @@ list-style: none;
 
  .search_condition{
   font-size: 10px;
-  margin :5px 0 important!;
+  margin :5px 0 !important!;
  }
 
  .rstname_search{
