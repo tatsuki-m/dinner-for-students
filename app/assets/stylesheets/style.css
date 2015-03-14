@@ -128,7 +128,7 @@ list-style: none;
 .center_box_ranking img{
   width: 150px;
   height:150px;
-  margin: auto !important!;
+  margin: auto !important;
 }
 
 .right_box_ranking{
@@ -169,7 +169,7 @@ list-style: none;
 
  .search_condition{
   font-size: 10px;
-  margin :5px 0 !important!;
+  margin :5px 0 !important;
  }
 
  .rstname_search{
