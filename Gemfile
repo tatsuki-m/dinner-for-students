@@ -59,3 +59,5 @@ end
 group :production do
   gem 'mysql2'
 end
+
+gem 'font-awesome-sass'
